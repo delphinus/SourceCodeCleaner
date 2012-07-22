@@ -1,0 +1,33 @@
+<mtapp:setting
+	id="sccleaner_active"
+	label="<__trans phrase="Enable this plugin">">
+<ul>
+	<li><input type="checkbox" value="1" name="opt_active" id="opt_active" <TMPL_IF NAME=OPT_ACTIVE>checked="checked"</TMPL_IF> /> <MT_TRANS phrase="Enable Source Code Cleaner"></li>
+</ul>
+</mtapp:setting>
+
+<mtapp:setting
+	id="sccleaner_item"
+	label="<__trans phrase="Set of items to be applied">">
+<ul>
+	<li><input type="checkbox" value="1" name="opt_li" id="opt_li" <TMPL_IF NAME=OPT_LI>checked="checked"</TMPL_IF> /> <MT_TRANS phrase="Applied to the 'li' element"></li>
+	<li><input type="checkbox" value="1" name="opt_pre" id="opt_pre" <TMPL_IF NAME=OPT_PRE>checked="checked"</TMPL_IF> /> <MT_TRANS phrase="Applied to the 'pre' element"></li>
+	<li><input type="checkbox" value="1" name="opt_all" id="opt_all" <TMPL_IF NAME=OPT_ALL>checked="checked"</TMPL_IF> /> <MT_TRANS phrase="Remove all newlines"></li>
+</ul>
+</mtapp:setting>
+
+<mtapp:setting
+	id="sccleaner_others"
+	label="<__trans phrase="Other Features">">
+<ul>
+
+	<li><input type="checkbox" value="1" name="opt_tabindex" id="opt_tabindex" <TMPL_IF NAME=OPT_TABINDEX>checked="checked"</TMPL_IF> /> <MT_TRANS phrase="Add tabindex to Input and Textarea"> : <MT_TRANS phrase="Initial value 0-9"> <input type="text" value="<mt:var name="opt_tabindex_num">" name="opt_tabindex_num" id="opt_tabindex_num" size="5" /></li>
+
+	<li><input type="checkbox" value="1" name="opt_accesskey" id="opt_accesskey" <TMPL_IF NAME=OPT_ACCESSKEY>checked="checked"</TMPL_IF> /> <MT_TRANS phrase="Add accesskey to Elements"> : <MT_TRANS phrase="Initial value 0-9,a-z"> <input type="text" value="<mt:var name="opt_accesskey_str">" name="opt_accesskey_str" id="opt_accesskey_str" size="5" /></li>
+
+	<li><input type="checkbox" value="1" name="opt_tab_acc" id="opt_tab_acc" <TMPL_IF NAME=OPT_TAB_ACC>checked="checked"</TMPL_IF> /> <MT_TRANS phrase="Accesskey is equal to tabindex"></li>
+
+	<li><input type="checkbox" value="1" name="opt_exlink" id="opt_exlink" <TMPL_IF NAME=OPT_EXLINK>checked="checked"</TMPL_IF> /> <MT_TRANS phrase="Add external link class"> : <MT_TRANS phrase="Initial value"> <input type="text" value="<mt:var name="opt_exlink_class">" name="opt_exlink_class" id="opt_exlink_class" size="5" /></li>
+
+</ul>
+</mtapp:setting>
