@@ -2,6 +2,7 @@ package MT::Plugin::SourceCodeCleaner;
 
 use strict;
 use base qw( MT::Plugin );
+use MT::Blog;
 
 my $plugin = MT::Plugin::SourceCodeCleaner->new({
     id          => 'sourcecodecleaner',
@@ -126,8 +127,11 @@ sub source_code_cleaner {
 		}
 
 		# Attribute : external link class
+        ( my $base = MT::Blog->load( $blog_id )->site_url ) =~ s!http://!!;
+        $base =~ s!(?=\.)!\\!g;
+        my $a_tag_re = qr+<a[^>]*href\s*=\s*"(?:ht|f)tps?://(?!$base)[^"]*"[^>]*>+;
 		if ($option_exlink) {
-			$$content_ref =~ s/<a[^>]*href="http[^"]*"[^>]*>/external_link($&)/ge;
+            $$content_ref =~ s/$a_tag_re/external_link($&)/ge;
 
 		}
 		
